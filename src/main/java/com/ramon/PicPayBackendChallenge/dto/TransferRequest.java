@@ -30,4 +30,8 @@ public class TransferRequest {
     public void setPayee(int payee) {
         this.payee = payee;
     }
+
+    public boolean hasFieldZero() {
+        return getValue() == null || getPayee() <= 0 || getPayer() <= 0;
+    }
 }
