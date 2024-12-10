@@ -34,4 +34,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(403).body(exception.getMessage());
     }
 
+    @ExceptionHandler(TransferExceptionUnauthorized.class)
+    private ResponseEntity<String> transferExceptionUnauthorized(TransferExceptionUnauthorized exception) {
+        return ResponseEntity.status(403).body(exception.getMessage());
+    }
+
 }
