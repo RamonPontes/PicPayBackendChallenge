@@ -1,0 +1,9 @@
+CREATE TABLE `picPayUser` (
+	`id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	`name` VARCHAR(255) NOT NULL,
+	`document` VARCHAR(255) NOT NULL,
+	`email` VARCHAR(255) NOT NULL,
+	`password` VARCHAR(255) NOT NULL,
+	`balance` DECIMAL(15, 2) NOT NULL,
+	`permissions` INT NOT NULL
+);
