@@ -1,9 +1,6 @@
 package com.ramon.PicPayBackendChallenge.infra;
 
-import com.ramon.PicPayBackendChallenge.exception.TransferExceptionInvalidArgument;
-import com.ramon.PicPayBackendChallenge.exception.TransferExceptionNullFields;
-import com.ramon.PicPayBackendChallenge.exception.TransferExceptionUserNotFound;
-import com.ramon.PicPayBackendChallenge.exception.TransferExceptionUserNotPermission;
+import com.ramon.PicPayBackendChallenge.exception.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -30,6 +27,11 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(TransferExceptionInvalidArgument.class)
     private ResponseEntity<String> transferExceptionInvalidArgument(TransferExceptionInvalidArgument exception) {
         return ResponseEntity.status(400).body(exception.getMessage());
+    }
+
+    @ExceptionHandler(TransferExceptionInsufficientBalance.class)
+    private ResponseEntity<String> transferExceptionInsufficientBalance(TransferExceptionInsufficientBalance exception) {
+        return ResponseEntity.status(403).body(exception.getMessage());
     }
 
 }
