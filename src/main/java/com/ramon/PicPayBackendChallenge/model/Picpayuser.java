@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.math.BigDecimal;
 
 @Entity
-public class PicPayUser {
+public class Picpayuser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
