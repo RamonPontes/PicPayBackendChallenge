@@ -31,7 +31,7 @@ public class TransferRequest {
         this.payee = payee;
     }
 
-    public boolean hasFieldZero() {
+    public boolean hasFieldNull() {
         return getValue() == null || getPayee() <= 0 || getPayer() <= 0;
     }
 }
