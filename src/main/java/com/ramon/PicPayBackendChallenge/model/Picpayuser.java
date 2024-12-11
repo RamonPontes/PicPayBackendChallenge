@@ -79,4 +79,8 @@ public class Picpayuser {
     public void setPermissions(int permissions) {
         this.permissions = permissions;
     }
+
+    public boolean hasFieldNull() {
+        return getName() == null || getDocument() == null || getPassword() == null || getPermissions() < 0 || balance.intValue() < 0;
+    }
 }
