@@ -44,4 +44,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(400).body(exception.getMessage());
     }
 
+    @ExceptionHandler(UserExceptionDocumentUsing.class)
+    private ResponseEntity<String> userExceptionDocumentUsing(UserExceptionDocumentUsing exception) {
+        return ResponseEntity.status(409).body(exception.getMessage());
+    }
+
 }
