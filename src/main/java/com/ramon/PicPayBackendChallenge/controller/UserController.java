@@ -21,4 +21,8 @@ public class UserController {
         return ResponseEntity.status(200).body(users);
     }
 
+    @PostMapping
+    public ResponseEntity<?> createUser(@RequestBody Picpayuser userData) {
+
+    }
 }
