@@ -39,4 +39,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(403).body(exception.getMessage());
     }
 
+    @ExceptionHandler(UserExceptionInvalidArgument.class)
+    private ResponseEntity<String> userExceptionInvalidArgument(UserExceptionInvalidArgument exception) {
+        return ResponseEntity.status(400).body(exception.getMessage());
+    }
+
 }
