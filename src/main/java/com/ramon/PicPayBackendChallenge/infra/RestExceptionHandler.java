@@ -49,4 +49,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
         return ResponseEntity.status(409).body(exception.getMessage());
     }
 
+    @ExceptionHandler(UserExceptionEmailUsing.class)
+    private ResponseEntity<String> userExceptionEmailUsing(UserExceptionEmailUsing exception) {
+        return ResponseEntity.status(409).body(exception.getMessage());
+    }
+
 }
