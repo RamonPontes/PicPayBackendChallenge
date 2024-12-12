@@ -23,6 +23,7 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> createUser(@RequestBody Picpayuser userData) {
-
+        userService.createUser(userData);
+        return ResponseEntity.status(200).body("User created");
     }
 }
